@@ -1,0 +1,8 @@
+com\example\cardservice\repository\CardRepository.class
+com\example\cardservice\entity\Card.class
+com\example\cardservice\logging\RequestResponseLoggingFilter.class
+com\example\cardservice\service\CardService.class
+com\example\cardservice\CardServiceApplication.class
+com\example\cardservice\controller\CardController.class
+com\example\cardservice\dto\CardDTO.class
+com\example\cardservice\service\CardFallBackService.class
