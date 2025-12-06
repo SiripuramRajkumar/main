@@ -3,7 +3,7 @@ Eureka URL = http://localhost:8761/
 card service swagger = http://localhost:9001/swagger-ui/index.html#/Card/getCardDetail
 http://localhost:9001/swagger-ui/index.html 
 http://localhost:9001/v3/api-docs	
-Gateway Swagger = 
+
 
 
 
