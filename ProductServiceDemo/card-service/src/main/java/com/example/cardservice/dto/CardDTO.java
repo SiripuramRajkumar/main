@@ -4,14 +4,24 @@ public class CardDTO {
 	private Long id;
 	private String name;
 	private String email;
+	private String createdBy;
 
 	public CardDTO() {
 	}
 
-	public CardDTO(Long id, String name, String email) {
+	public CardDTO(Long id, String name, String email,String createdBy) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
+		this.createdBy=createdBy;
+	}
+
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
 	}
 
 	public Long getId() {

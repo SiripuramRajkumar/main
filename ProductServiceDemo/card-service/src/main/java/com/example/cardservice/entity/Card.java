@@ -6,26 +6,36 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "Cards")
 public class Card {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
 
-	@Column(nullable = false)
-	private String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Card_Id")
+    private Long id;
 
-	@Column(nullable = false, unique = true)
-	private String email;
+    @Column(name = "holder_name", nullable = false)
+    private String name;
 
-	@Column(name = "created_at")
-	private LocalDateTime createdAt = LocalDateTime.now();
+    @Column(name = "email_id", nullable = false, unique = true)
+    private String email;
 
-	public Card() {
-	}
+    @Column(name = "created_by", nullable = false)
+    private String createdBy;
 
-	public Card(String name, String email) {
-		this.name = name;
-		this.email = email;
-	}
+    @Column(name = "created_date", updatable = false)
+    private LocalDateTime createdDate;
+    
+    public Card() {
+        // Set created_on automatically if DB doesn't
+        this.createdDate = LocalDateTime.now();
+    }
+
+    public Card(String holderName, String emailId, String createdBy) {
+        this.name = holderName;
+        this.email = emailId;
+        this.createdBy = createdBy;
+        this.createdDate = LocalDateTime.now();
+    }
+
 
 	public Long getId() {
 		return id;
@@ -51,11 +61,22 @@ public class Card {
 		this.email = email;
 	}
 
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
+	public String getCreatedBy() {
+		return createdBy;
 	}
 
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
 	}
+
+	public LocalDateTime getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(LocalDateTime createdDate) {
+		this.createdDate = createdDate;
+	}
+
+    
 }
+

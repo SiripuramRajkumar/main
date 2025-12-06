@@ -31,13 +31,15 @@ public class CardController {
 	@Operation(summary = "Create Card", description = "Create a new Card")
 	@PostMapping("/cards/create")
 	public ResponseEntity<CardDTO> saveCard(@RequestBody Card card) {
+		card.setCreatedBy("Rajc");
 		CardDTO created = cardService.saveCard(card);
 		return ResponseEntity.ok(created);
 	}
 
 	@Operation(summary = "update card", description = "update existing card")
 	@PutMapping("/cards/update/{id}")
-	public ResponseEntity<CardDTO> updateCard(@PathVariable Long id, @RequestBody Card card) {
+	public ResponseEntity<CardDTO> updateCard(@PathVariable("id") Long id, @RequestBody Card card) {
+		card.setCreatedBy("Raju");
 		return cardService.updateCard(id, card).map(ResponseEntity::ok)
 				.orElseGet(() -> ResponseEntity.notFound().build());
 	}
@@ -45,20 +47,20 @@ public class CardController {
 //api with Pagination (Each Page 10 records)
 	@Operation(summary = "List Cards", description = "Get paginated list of cards (page query param)")
 	@GetMapping("/cards")
-	public ResponseEntity<Page<CardDTO>> getAllCardsDetail(@RequestParam(defaultValue = "0") int page) {
+	public ResponseEntity<Page<CardDTO>> getAllCardsDetail( @RequestParam(name = "page", defaultValue = "0") int page) {
 		Page<CardDTO> result = cardService.getCards(page);
 		return ResponseEntity.ok(result);
 	}
 
 	// @Operation(summary = "GET Card", description = "Get card by id")
 	@GetMapping("/cards/{id}")
-	public ResponseEntity<CardDTO> getCardDetail(@PathVariable Long id) {
+	public ResponseEntity<CardDTO> getCardDetail(@PathVariable("id") Long id) {
 		return cardService.getCards(id).map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
 	}
 
 	// api which will nested calling another api from 3rd party
 	@GetMapping("/cards/{id}/external")
-	public ResponseEntity<String> getCardWithExternal(@PathVariable Long cardId) {
+	public ResponseEntity<String> getCardWithExternal(@PathVariable("id") Long cardId) {
 		try {
 			String combined = cardService.getCardWithExternal(cardId);
 			return ResponseEntity.ok(combined);

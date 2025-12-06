@@ -1,0 +1,447 @@
+{
+	"info": {
+		"_postman_id": "c7680c0e-4334-4489-a809-320f5857b138",
+		"name": "My Collection",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50603930",
+		"_collection_link": "https://rajus1219-3054791.postman.co/workspace/wdefdbg-'s-Workspace~53e2d42d-119a-4c14-8b8a-b8850d5a10f6/collection/50603930-c7680c0e-4334-4489-a809-320f5857b138?action=share&source=collection_link&creator=50603930"
+	},
+	"item": [
+		{
+			"name": "createcard",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"card1\",\r\n    \"email\": \"card1@mail\",\r\n    \"createdAt\": \"2025-12-06T00:00:00Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9001/api/v1/cards/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"v1",
+						"cards",
+						"create"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://localhost:9001/api/v1/cards/create' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"id\": 1,\r\n    \"name\": \"card1\",\r\n    \"email\": \"card1@mail\",\r\n    \"createdAt\": \"2025-12-06T00:00:00Z\"\r\n}'\r\n"
+			},
+			"response": [
+				{
+					"name": "create_response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-api-key",
+								"value": "230000000RRGTWEN0000000000000",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"name\": \"card31\",\r\n    \"email\": \"card31@mail\",\r\n    \"createdAt\": \"2025-12-06T00:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/api/v1/cards/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"api",
+								"v1",
+								"cards",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Dec 2025 03:37:55 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 33,\n    \"name\": \"card31\",\n    \"email\": \"card31@mail\",\n    \"createdBy\": \"Rajc\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getcard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/api/v1/cards/36",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"v1",
+						"cards",
+						"36"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://localhost:9001/api/v1/cards/1'\r\n"
+			},
+			"response": [
+				{
+					"name": "getcard",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/api/v1/cards/36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"api",
+								"v1",
+								"cards",
+								"36"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Dec 2025 04:00:46 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 36,\n    \"name\": \"updated-card1\",\n    \"email\": \"updated@mail\",\n    \"createdBy\": \"Raju\"\n}"
+				}
+			]
+		},
+		{
+			"name": "externalcall",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/api/v1/cards/1/external",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"v1",
+						"cards",
+						"1",
+						"external"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://localhost:9001/api/v1/cards/1/external'\r\n"
+			},
+			"response": [
+				{
+					"name": "externalresponse",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/api/v1/cards/36/external",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"api",
+								"v1",
+								"cards",
+								"36",
+								"external"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "371"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Dec 2025 04:03:47 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\"card\":{\"id\":36,\"name\":\"updated-card36\",\"email\":\"updated36@mail\"},\"external\":{\n  \"userId\": 1,\n  \"id\": 1,\n  \"title\": \"sunt aut facere repellat provident occaecati excepturi optio reprehenderit\",\n  \"body\": \"quia et suscipit\\nsuscipit recusandae consequuntur expedita et cum\\nreprehenderit molestiae ut ut quas totam\\nnostrum rerum est autem sunt rem eveniet architecto\"\n}}"
+				}
+			]
+		},
+		{
+			"name": "pagnation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9001/api/v1/cards?arg0=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"v1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "arg0",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://localhost:9001/api/v1/cards?arg0=0'\r\n"
+			},
+			"response": [
+				{
+					"name": "paginationresult",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9001/api/v1/cards?arg0=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"api",
+								"v1",
+								"cards"
+							],
+							"query": [
+								{
+									"key": "arg0",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1081"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Dec 2025 03:58:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        {\n            \"id\": 1,\n            \"name\": \"cardholder1\",\n            \"email\": \"card1@mail.com\",\n            \"createdBy\": \"System\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"cardholder2\",\n            \"email\": \"card2@mail.com\",\n            \"createdBy\": \"System\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"cardholder3\",\n            \"email\": \"card3@mail.com\",\n            \"createdBy\": \"System\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"cardholder4\",\n            \"email\": \"card4@mail.com\",\n            \"createdBy\": \"System\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"cardholder5\",\n            \"email\": \"card5@mail.com\",\n            \"createdBy\": \"System\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"cardholder6\",\n            \"email\": \"card6@mail.com\",\n            \"createdBy\": \"System\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"cardholder7\",\n            \"email\": \"card7@mail.com\",\n            \"createdBy\": \"System\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"cardholder8\",\n            \"email\": \"card8@mail.com\",\n            \"createdBy\": \"System\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"cardholder9\",\n            \"email\": \"card9@mail.com\",\n            \"createdBy\": \"System\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"cardholder10\",\n            \"email\": \"card10@mail.com\",\n            \"createdBy\": \"System\"\n        }\n    ],\n    \"pageable\": {\n        \"pageNumber\": 0,\n        \"pageSize\": 10,\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": false,\n    \"totalPages\": 4,\n    \"totalElements\": 32,\n    \"size\": 10,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": true,\n        \"sorted\": false,\n        \"unsorted\": true\n    },\n    \"first\": true,\n    \"numberOfElements\": 10,\n    \"empty\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "updatecard",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"updated-card36\",\r\n    \"email\": \"updated36@mail\",\r\n    \"createdAt\": \"2025-12-06T00:00:00Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9001/api/v1/cards/update/36",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9001",
+					"path": [
+						"api",
+						"v1",
+						"cards",
+						"update",
+						"36"
+					]
+				},
+				"description": "Generated from cURL: curl --location --request PUT 'http://localhost:9001/api/v1/cards/update/1' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"id\": 1,\r\n    \"name\": \"updated-card1\",\r\n    \"email\": \"updated@mail\",\r\n    \"createdAt\": \"2025-12-06T00:00:00Z\"\r\n}'\r\n"
+			},
+			"response": [
+				{
+					"name": "updateresult",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"updated-card1\",\r\n    \"email\": \"updated@mail\",\r\n    \"createdAt\": \"2025-12-06T00:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9001/api/v1/cards/update/36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"api",
+								"v1",
+								"cards",
+								"update",
+								"36"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 06 Dec 2025 04:00:11 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 36,\n    \"name\": \"updated-card1\",\n    \"email\": \"updated@mail\",\n    \"createdBy\": \"Raju\"\n}"
+				}
+			]
+		}
+	]
+}

@@ -25,7 +25,7 @@ public class CardService {
     @Transactional
     public CardDTO saveCard(Card user) {
         Card card = cardRepository.save(user);
-        return new CardDTO(card.getId(), card.getName(), card.getEmail());
+        return new CardDTO(card.getId(), card.getName(), card.getEmail(),card.getCreatedBy());
     }
 
     @Transactional
@@ -33,20 +33,21 @@ public class CardService {
         return cardRepository.findById(id).map(exist -> {
         	exist.setName(update.getName());
         	exist.setEmail(update.getEmail());
+        	exist.setCreatedBy(update.getCreatedBy());
             Card card = cardRepository.save(exist);
-            return new CardDTO(card.getId(), card.getName(), card.getEmail());
+            return new CardDTO(card.getId(), card.getName(), card.getEmail(),card.getCreatedBy());
         });
     }
 
     @Transactional(readOnly = true)
     public Page<CardDTO> getCards(int page) {
         PageRequest pageCount = PageRequest.of(page, 10);
-        return cardRepository.findAll(pageCount).map(card -> new CardDTO(card.getId(), card.getName(), card.getEmail()));
+        return cardRepository.findAll(pageCount).map(card -> new CardDTO(card.getId(), card.getName(), card.getEmail(),card.getCreatedBy()));
     }
 
     @Transactional(readOnly = true)
     public Optional<CardDTO> getCards(long id) {
-        return cardRepository.findById(id).map(card -> new CardDTO(card.getId(), card.getName(), card.getEmail()));
+        return cardRepository.findById(id).map(card -> new CardDTO(card.getId(), card.getName(), card.getEmail(),card.getCreatedBy()));
     }
 // api which will nested calling another api from 3rd party
     @Transactional(readOnly = true)
